@@ -56,7 +56,7 @@ exports.update = async(req, res) => {
 
 //Menghapus data sesuai id yang dikirmkan
 exports.delete = async(req, res) => {
-    const id = id.params.id
+    const id = req.params.id
     try {
         const quiz = await Quiz.findByPk(id,{ rejectOnEmpty: true})
         quiz.destroy()
