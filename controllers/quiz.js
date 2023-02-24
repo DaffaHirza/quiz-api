@@ -87,31 +87,3 @@ exports.findOne = async (req,res) => {
         });
     }
 }
-
-//menampilkan semua data quiz berdasarkan category tertentu
-exports.getByCategoryId = async(req, res) => {
-    const id = req.params.id
-    const quizzes = await Quiz.findAll({
-        where: {
-            categoryId: id
-        }
-    })
-    res.json({
-        message: `berhasil mengambil quiz dengan categoryId=${id}`,
-        data: quizzes,
-    });
-}
-
-//menampilkan semua data quiz berdasarkan level tertentu
-exports.getByLevelId = async(req, res) => {
-    const id = req.params.id
-    const quizzes = await Quiz.findAll({
-        where: {
-            levelId: id
-        }
-    })
-    res.json({
-        message: `berhasil mengambil quiz dengan categoryId=${id}`,
-        data: quizzes,
-    });
-}
