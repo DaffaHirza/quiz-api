@@ -18,12 +18,6 @@ module.exports = (sequelize, Sequelize) => {
         key: {
             type: Sequelize.STRING,
         },
-        categoryId: {
-            type: Sequelize.INTEGER,
-        },
-        levelId: {
-            type: Sequelize.INTEGER,
-        },
     });
     return Quiz;
 }

@@ -38,7 +38,7 @@ exports.getAll = async(req, res) => {
 exports.update = async(req, res) => {
     const id = req.params.id
     try {
-        const quiz = await Quiz.findByPk(id,{ rejectOnEmpty: true})
+        const quiz = await Quiz.findByPk(id,{ rejectOnEmpty: true}) //mencari data 
         quiz.update(req.body, {
             where: {id}
         })
@@ -58,14 +58,14 @@ exports.update = async(req, res) => {
 exports.delete = async(req, res) => {
     const id = req.params.id
     try {
-        const quiz = await Quiz.findByPk(id,{ rejectOnEmpty: true})
-        quiz.destroy()
+        const quiz = await Quiz.findByPk(id,{ rejectOnEmpty: true}) //mencari data 
+        quiz.destroy() //menghapus data
         res.json({
-            message: "berhasil menghapus quiz"
+            message: "berhasil menghapus quiz" // json tidak menampilkan data karna dihapus
         });
-    } catch (error) {
+    } catch (error) { // jika id tidak ditemukan akan masuk ke catch
         res.status(500).json({
-            message: error.message || "beberapa kesalahan terjadi saat mengambil kuis",
+            message: error.message || "beberapa kesalahan terjadi saat mengambil kuis", //
             data: null,
         });
     }

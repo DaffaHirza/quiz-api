@@ -8,7 +8,7 @@ exports.submitOne = async (req, res) => {
     };
 
     try{
-        var quiz = await Quiz.findOne({
+        var quiz = await Quiz.findOne({ //mencari 1 data quiz
             where: { 
                 id: req.body.quizId
             }
@@ -17,7 +17,7 @@ exports.submitOne = async (req, res) => {
 
         if (req.body.answer == quiz.key){
             res.status(200).json({
-            "message" : "benar"
+            "message" : "Jawabanmu benar, selamat!"
         })
         } else {
             res .status(200).json({
