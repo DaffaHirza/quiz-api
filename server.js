@@ -16,7 +16,8 @@ app.get('/', (req, res) => {
     res.send('quiz by dapa');
 });
 
-app. use('/api/quizzes', quizRoute)
-app. use('/api/jobsheet', jobsheetRoute)
+app.use('/api/quizzes', quizRoute)
+app.use('/api/jobsheet', jobsheetRoute)
 
 app.listen(port, () => console.log(`App listening on port http://localhost:${port}`));
+
